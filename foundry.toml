@@ -1,0 +1,7 @@
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+[profile.default]
+
+out = "build/out"
+cache_path = "build/cache"
+fs_permissions = [{ access = "read", path = "./"}]

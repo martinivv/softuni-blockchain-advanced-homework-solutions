@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "test": "forge test --ignored-error-codes=9302"
+  },
+  "packageManager": "yarn@1.22.22"
+}
