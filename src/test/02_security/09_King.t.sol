@@ -2,8 +2,8 @@
 pragma solidity =0.8.23;
 
 import {Tests} from "@/02_security/core/Tests.sol";
-import {KingFactory, King} from "../levels/09_King/KingFactory.sol";
-import {HackKing} from "../levels/09_King/HackKing.sol";
+import {KingFactory, King} from "@/02_security/levels/09_King/KingFactory.sol";
+import {HackKing} from "@/02_security/levels/09_King/HackKing.sol";
 
 contract TestKing is Tests {
     King private level;

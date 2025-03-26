@@ -2,6 +2,8 @@
 
 [profile.default]
 
+optimizer_runs = 9999999
+via_ir = true
 out = "build/out"
 cache_path = "build/cache"
 fs_permissions = [{ access = "read", path = "./"}]

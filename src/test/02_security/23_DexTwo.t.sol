@@ -2,7 +2,7 @@
 pragma solidity =0.8.23;
 
 import {Tests} from "@/02_security/core/Tests.sol";
-import {DexTwoFactory, DexTwo, SwappableTokenTwo, IERC20} from "../levels/23_DexTwo/DexTwoFactory.sol";
+import {DexTwoFactory, DexTwo, SwappableTokenTwo, IERC20} from "@/02_security/levels/23_DexTwo/DexTwoFactory.sol";
 
 contract TestDexTwo is Tests {
     DexTwo private level;

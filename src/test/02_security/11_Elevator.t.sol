@@ -2,29 +2,29 @@
 pragma solidity =0.8.23;
 
 import {Tests} from "@/02_security/core/Tests.sol";
-import {PreservationFactory, Preservation} from "../levels/16_Preservation/PreservationFactory.sol";
-import {HackPreservation} from "../levels/16_Preservation/HackPreservation.sol";
+import {ElevatorFactory, Elevator} from "@/02_security/levels/11_Elevator/ElevatorFactory.sol";
+import {HackElevator} from "@/02_security/levels/11_Elevator/HackElevator.sol";
 
-contract TestPreservation is Tests {
-    Preservation private level;
+contract TestElevator is Tests {
+    Elevator private level;
 
     /* =============================== SETUP&ATTACK =============================== */
 
     constructor() {
-        levelFactory = new PreservationFactory();
+        levelFactory = new ElevatorFactory();
     }
 
     function setupLevel() internal override {
         levelAddress = payable(this.createLevelInstance());
-        level = Preservation(levelAddress);
+        level = Elevator(levelAddress);
     }
 
     function attack() internal override {
         vm.startPrank(PLAYER);
 
-        HackPreservation hack = new HackPreservation();
-        hack.attack(level);
-        assertEq(level.owner(), PLAYER);
+        HackElevator hack = new HackElevator(levelAddress);
+        hack.attack();
+        assertTrue(level.top());
 
         vm.stopPrank();
     }
