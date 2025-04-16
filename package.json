@@ -2,5 +2,9 @@
   "scripts": {
     "test": "forge test --ignored-error-codes=9302"
   },
+  "dependencies": {
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.5.1"
+  },
   "packageManager": "yarn@1.22.22"
 }
