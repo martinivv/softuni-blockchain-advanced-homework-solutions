@@ -4,6 +4,9 @@
 
 optimizer_runs = 9999999
 via_ir = true
-out = "build/out"
 cache_path = "build/cache"
 fs_permissions = [{ access = "read", path = "./"}]
+ffi = true
+ast = true
+build_info = true
+extra_output = ["storageLayout"]
